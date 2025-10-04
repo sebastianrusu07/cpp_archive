@@ -6,9 +6,9 @@
 using namespace std;
 
 int main() {
-    // test committtt
-    int n,r,k;
+    int n;
     cin >> n;
-    cout << n+3;
+    int size=2*n+1; // center
+    
     return 0;
 }
