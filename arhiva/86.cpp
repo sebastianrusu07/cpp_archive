@@ -5,8 +5,8 @@
 #include <algorithm>
 using namespace std;
 
-ifstream cin("halfsort.in");
-ofstream cout("halfsort.out");
+ifstream cin("maxsuma.in");
+ofstream cout("maxsuma.out");
 
 int main() {
 
