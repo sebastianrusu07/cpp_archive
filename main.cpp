@@ -2,24 +2,51 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <algorithm>
-#include <iterator>
 #include <iomanip>
+#include <unordered_map>
+#include <algorithm>
 using namespace std;
 
-int main() {
-    int n;
-    cin >> n;
-    int sumaT=0,sumaV=0;
-    for (int i = 0; i < n; i++)
+int main()
+{
+    int z,l,a;
+    cin >> z >> l >> a;
+    int Z=z,L=l,A=a;
+
+    unordered_map<int,int> zile31 = {
+        {1,1},
+        {3,1},
+        {5,1},
+        {7,1},
+        {8,1},
+        {10,1},
+        {12,1}
+    };
+
+    if (l==2)
     {
-        int timp,viteza;
-        cin >> timp >> viteza;
-        sumaT+=timp;
-        sumaV+=viteza*timp;
+        if (a%4==0 && a%100!=0 || a%400==0)
+        {
+            z++;
+            if (z==29)
+            {
+                Z=1;
+                L=3;
+            }
+            cout << Z << " " << L << " " << A;
+            return 0;
+        }else
+        {
+            z++;
+            if (z==28)
+            {
+                Z=1;
+                L=3;
+            }
+            cout << Z << " " << L << " " << A;
+            return 0;
+        }
     }
-    double medie = (double)sumaV/(double)sumaT;
-    cout << fixed << setprecision(2);
-    cout << sumaV << " " << medie;
+
     return 0;
 }
