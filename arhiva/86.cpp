@@ -5,8 +5,8 @@
 #include <algorithm>
 using namespace std;
 
-ifstream cin("maxsuma.in");
-ofstream cout("maxsuma.out");
+ifstream cin("bac.in");
+ofstream cout("bac.out");
 
 int main() {
 
