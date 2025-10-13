@@ -5,8 +5,8 @@
 #include <algorithm>
 using namespace std;
 
-ifstream cin("bac.in");
-ofstream cout("bac.out");
+ifstream cin("interclasare2.in");
+ofstream cout("interclasare2.out");
 
 int main() {
 
