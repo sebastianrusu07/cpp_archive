@@ -6,8 +6,8 @@
 #include <unordered_set>
 using namespace std;
 
-ifstream cin("bac.in");
-ofstream cout("bac.out");
+ifstream cin("interclasare.in");
+ofstream cout("interclasare.out");
 
 int main()
 {
