@@ -7,8 +7,8 @@
 #include <climits>
 using namespace std;
 
-ifstream cin("nextprime.in");
-ofstream cout("nextprime.out");
+ifstream cin("inlocuirecuvant.in");
+ofstream cout("inlocuirecuvant.out");
 
 vector<long long> vec;
 
