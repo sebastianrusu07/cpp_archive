@@ -7,8 +7,8 @@
 #include <climits>
 using namespace std;
 
-ifstream cin("mincols1.in");
-ofstream cout("mincols1.out");
+ifstream cin("inlocuirecuvant.in");
+ofstream cout("inlocuirecuvant.out");
 
 int main()
 {

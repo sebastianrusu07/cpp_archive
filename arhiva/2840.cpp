@@ -7,8 +7,8 @@
 #include <climits>
 using namespace std;
 
-ifstream cin("secventauniforma.in");
-ofstream cout("secventauniforma.out");
+ifstream cin("inlocuirecuvant.in");
+ofstream cout("inlocuirecuvant.out");
 
 int main()
 {
