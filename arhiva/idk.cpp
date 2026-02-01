@@ -10,29 +10,16 @@
 #include <unordered_set>
 using namespace std;
 
-bool isPalindrome(string nr)
-{
-    string temp=nr;
-    reverse(temp.begin(),temp.end());
-    return temp==nr;
-}
-
 int main()
 {
     int n;
+    unsigned long long i;
     cin >> n;
 
-    int t=1,maxSpecialNr=8;
-    int nr=t*t*t;
-    while (nr<=n)
-    {
-        if (isPalindrome(to_string(nr)))
-        {
-            maxSpecialNr=nr;
-        }
-        t++;
-        nr=t*t*t;
-    }
-    cout << maxSpecialNr;
+    vector<int> cuburi={1,8,343,1331,1030301,1367631,1003003001};
+
+    for (i=cuburi.size()-1; n<cuburi[i]; i--);
+
+    cout << cuburi[i];
     return 0;
 }
