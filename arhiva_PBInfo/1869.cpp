@@ -1,0 +1,66 @@
+#include <cmath>
+#include <vector>
+#include <iomanip>
+#include <algorithm>
+#include <string>
+#include <climits>
+#include <list>
+#include <unordered_map>
+#include <unordered_set>
+#include <chrono>
+#include <fstream>
+#include <thread>
+#include <cctype>
+using namespace std;
+
+ifstream cin("prosirz.in");
+ofstream cout("prosirz.out");
+
+bool isVowel(char c)
+{
+    if (c=='a' || c=='e' || c=='i' || c=='o' || c=='u')
+    {
+        return true;
+    }
+    return false;
+}
+
+int main()
+{
+    string text;
+    getline(cin, text);
+
+    string modifiedText1;
+    int cnt=0;
+    vector<string> words;
+    string word;
+    for (int i=0;i<text.size(); i++)
+    {
+        if (isVowel(text[i]) && text[i]!=' ') cnt++;
+        if (isalpha(text[i]) && (i==text.size()-1 || text[i+1]==' '))
+        {
+            modifiedText1.push_back('Z');
+        }else
+        {
+            modifiedText1.push_back(text[i]);
+        }
+
+        if (text[i]!=' ')
+        {
+            word.push_back(text[i]);
+        }else
+        {
+            if (!word.empty()) words.push_back(word);
+            word.clear();
+        }
+    }
+    words.push_back(word);
+    sort(words.begin(), words.end());
+    reverse(words.begin(), words.end());
+    cout << cnt << '\n' << modifiedText1 << '\n';
+    for (int i=0;i<words.size();i++)
+    {
+        if (!words[i].empty()) cout << words[i] << ' ';
+    }
+    return 0;
+}
