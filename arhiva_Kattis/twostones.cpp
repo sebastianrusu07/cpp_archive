@@ -1,0 +1,13 @@
+#include <iomanip>
+#include <iostream>
+#include <string>
+#include <unordered_map>
+#include <cmath>
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    cout << (n%2==0 ?"Bob":"Alice");
+    return 0;
+}
