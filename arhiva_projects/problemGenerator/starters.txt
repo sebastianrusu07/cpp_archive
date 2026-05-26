@@ -1,0 +1,8 @@
+Se da un numar N, dupa care se dau N numere naturale./1.5
+Se da un numar necunoscut de numere, pana la aparitia lui 0./2.4
+Se da o matrice cu N linii si M coloane./3.9
+Se da un numar necunoscut de numere./4.5
+Se dau 2N numere. Numerele pe pozitii impare trebuie ignorate./6.0
+Se da un numar N. Sa se ia in considerare pentru cerinta numerele de la 1 pana la N, inclusiv./5.3
+Se da un numar N. Sa se ia in considerare pentru cerinta numerele prime de la 1 pana la N, inclusiv./7.0
+Se dau 5 numere./1.2

@@ -1,0 +1,6 @@
+Sa se afle cel mai mare numar dintre numerele date./1.2
+Sa se afle penultimul cel mai mare numar dintre numerele date./3.2
+Sa se afle cate numere prime exista printre numerele date./6.5
+Ordonati numerele crescator./4.4
+Sa se afle pozitia celui mai mare numar./3.0
+Sa se afle pozitia celui mai mare numar./3.1

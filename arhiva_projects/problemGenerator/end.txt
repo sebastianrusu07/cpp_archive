@@ -1,0 +1,8 @@
+Nu exista restrictii./1.0
+Scrie pe ecran doar rezultatele impare, iar daca nu vor fii rezultate impare, atunci scrie "EMPTY"./3.2
+Scrie rezultatele in fisierul "FILE.OUT"./2.1
+Input-ul se va lua din fisierul "FILE.IN"./1.9
+Pentru input si output, se vor folosi fisierele "ABC.IN", respectiv "XYZ.OUT"./4.5
+Rezolva problema cu maxim 5 variabile./7.0
+Solutia ta va trebui sa ruleze in sub 1 secunda./5.5
+
