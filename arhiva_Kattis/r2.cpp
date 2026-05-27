@@ -1,0 +1,13 @@
+#include <cmath>
+#include <iomanip>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a,b;
+    cin >> a >> b;
+    cout << b+(b-a);
+    return 0;
+}
