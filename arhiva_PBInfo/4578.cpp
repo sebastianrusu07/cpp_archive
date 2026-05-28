@@ -7,15 +7,6 @@
 #include <climits>
 using namespace std;
 
-bool identici(int a[], int b[], int length) {
-    for (int i = 0; i < length; i++) {
-        if (a[i] != b[i]) {
-            return false;
-        }
-    }
-    return true;
-}
-
 int main() {
 
     int n,m;
