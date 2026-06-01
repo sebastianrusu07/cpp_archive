@@ -11,10 +11,17 @@ int main()
     string s;
     cin >> s;
 
-    while (s.find('<')!=string::npos){
-        s.erase(s.find('<')-1,2);
+    string res;
+    for(int i = 0; i < s.length();i++)
+    {
+        if (s[i]=='<')
+        {
+            res.erase(res.length()-1);
+        }else
+        {
+            res+=s[i];
+        }
     }
-
-    cout << s;
+    cout << res;
     return 0;
 }
