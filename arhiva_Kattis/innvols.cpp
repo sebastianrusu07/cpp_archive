@@ -7,17 +7,6 @@
 #include <unordered_map>
 using namespace std;
 
-bool doSwap(string a,string b)
-{
-    for (int i=0;i<min(a.length(),b.length());i++)
-    {
-        if (a[i]==b[i]) continue;
-        if (a[i]>b[i]) return true;
-        return false;
-    }
-    return a.length()>b.length();
-}
-
 int main()
 {
     unordered_map<string,int> map;
@@ -38,25 +27,14 @@ int main()
         orderedMap.push_back(make_pair(it.second,it.first));
     }
 
-    for(int i=0; i<orderedMap.size(); i++)
+    sort(orderedMap.begin(),orderedMap.end(),[](const auto &a,const auto &b)
     {
-        for(int j=i+1; j<orderedMap.size(); j++)
+        if(a.first==b.first)
         {
-            if (orderedMap[i].first < orderedMap[j].first)
-            {
-                swap(orderedMap[i],orderedMap[j]);
-            }else
-            {
-                if (orderedMap[i].first == orderedMap[j].first)
-                {
-                    if(doSwap(orderedMap[i].second,orderedMap[j].second))
-                    {
-                        swap(orderedMap[i],orderedMap[j]);
-                    }
-                }
-            }
+            return a.second<b.second;
         }
-    }
+        return a.first>b.first;
+    });
 
     for (auto it : orderedMap)
     {
