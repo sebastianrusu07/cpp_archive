@@ -6,7 +6,7 @@
 #include <unordered_map>
 using namespace std;
 
-int freq[14];
+int scores[14];
 
 int translate(string s)
 {
@@ -28,14 +28,14 @@ int main()
         rank.pop_back();
 
         int intRank = translate(rank);
-        freq[intRank]++;
+        scores[intRank]++;
     }
 
     double maxi=0;
     int pos=0;
     for(int i = 1; i <= 13; i++)
     {
-        int amntOfCards=4-freq[i];
+        int amntOfCards=4-scores[i];
         if(amntOfCards>maxi)
         {
             maxi = amntOfCards;
