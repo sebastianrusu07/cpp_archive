@@ -1,21 +1,45 @@
-#include <algorithm>
 #include <iostream>
 #include <string>
-#include <vector>
 #include <iomanip>
 #include <unordered_map>
-#include <algorithm>
+#include <vector>
+#include <unordered_set>
 using namespace std;
 
 int main()
 {
-    /*
-     *  This is where I write my code!
-     *
-     *  However, when I'm finished I move it into the archives folder in a separate .cpp file.
-     *
-     *  So nothing here but us chickens... for now atleast...
-     *
-     */
+    int n;
+    cin>>n;
+
+    for(int i=1;i<=n;i++)
+    {
+        int k;
+        cin>>k;
+        cin.ignore();
+
+        string name;
+        getline(cin,name);
+
+        bool pancakes=false,peaSoup=false;
+        for(int j=1;j<=k;j++)
+        {
+            string menu;
+            getline(cin,menu);
+            if(menu=="pancakes")
+            {
+                pancakes=true;
+            }else if(menu=="pea soup")
+            {
+                peaSoup=true;
+            }
+
+            if(pancakes && peaSoup)
+            {
+                cout << name;
+                return 0;
+            }
+        }
+    }
+    cout << "Anywhere is fine I guess";
     return 0;
 }
