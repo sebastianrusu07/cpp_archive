@@ -4,42 +4,29 @@
 #include <unordered_map>
 #include <vector>
 #include <unordered_set>
+#include <cmath>
 using namespace std;
 
 int main()
 {
-    int n;
+    long long n;
     cin>>n;
 
-    for(int i=1;i<=n;i++)
+    vector<long long> costs;
+    for(long long i=1;i<=n;i++)
     {
-        int k;
-        cin>>k;
-        cin.ignore();
-
-        string name;
-        getline(cin,name);
-
-        bool pancakes=false,peaSoup=false;
-        for(int j=1;j<=k;j++)
-        {
-            string menu;
-            getline(cin,menu);
-            if(menu=="pancakes")
-            {
-                pancakes=true;
-            }else if(menu=="pea soup")
-            {
-                peaSoup=true;
-            }
-
-            if(pancakes && peaSoup)
-            {
-                cout << name;
-                return 0;
-            }
-        }
+        long long price;
+        cin>>price;
+        costs.push_back(price);
     }
-    cout << "Anywhere is fine I guess";
+
+    sort(costs.begin(),costs.end(),greater<long long>());
+
+    long long sum=0;
+    for (long long i=2;i<costs.size();i+=3)
+    {
+        sum+=costs[i];
+    }
+    cout<<sum;
     return 0;
 }
