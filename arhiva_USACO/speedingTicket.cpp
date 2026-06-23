@@ -45,7 +45,7 @@ int main()
     }
 
     int maxOver=0;
-    for (int i=1;i<100;i++)
+    for (int i=0;i<100;i++)
     {
         maxOver=max(speed[i]-limit[i],maxOver);
     }
