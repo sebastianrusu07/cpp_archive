@@ -1,4 +1,4 @@
-#include <iostream>
+#include <fstream>
 #include <string>
 #include <iomanip>
 #include <unordered_map>
@@ -7,69 +7,52 @@
 #include <cmath>
 using namespace std;
 
-bool isVowel(char c)
-{
-    return c=='a' || c=='e' || c=='i' || c=='o' || c=='u';
-}
+ifstream cin("speeding.in");
+ofstream cout("speeding.out");
+
+int limit[101];
+int speed[101];
 
 int main()
 {
-    string pass;
-    while (cin >> pass && pass != "end")
+    int n,m;
+    cin >> n >> m;
+
+    int markedUntil=0;
+    for (int i=0;i<n;i++)
     {
+        int length,inputLimit;
+        cin >> length >> inputLimit;
 
-
-        bool isOk=true;
-        //1;
-        for(int j=0;j<pass.length();j++)
+        for (int j=0;j<length;j++)
         {
-            if(isVowel(pass[j]))
-            {
-                break;
-            }
-            if (j==pass.length()-1)
-            {
-                cout << '<' << pass << "> is not acceptable.\n";
-                isOk = false;
-                break;
-            }
+            limit[j+markedUntil]=inputLimit;
         }
-
-        if(!isOk) continue;
-
-        //2
-        if (pass.size()>=3)
-        {
-            for(int j=0;j<pass.length()-2;j++)
-            {
-                if ( (isVowel(pass[j]) && isVowel(pass[j+1]) && isVowel(pass[j+2])) || (!isVowel(pass[j]) && !isVowel(pass[j+1]) && !isVowel(pass[j+2])) )
-                {
-                    cout << '<' << pass << "> is not acceptable.\n";
-                    isOk = false;
-                    break;
-                }
-            }
-        }
-
-        if(!isOk) continue;
-
-        //3
-        if (pass.size()>=2)
-        {
-            for(int j=0;j<pass.length()-1;j++)
-            {
-                if (pass[j]!='e' && pass[j]!='o' && pass[j]==pass[j+1])
-                {
-                    cout << '<' << pass << "> is not acceptable.\n";
-                    isOk = false;
-                    break;
-                }
-            }
-        }
-
-        if(!isOk) continue;
-
-        cout << '<' << pass << "> is acceptable.\n";
+        markedUntil+=length;
     }
+
+    markedUntil=0;
+    for (int i=0;i<m;i++)
+    {
+        int length,inputSpeed;
+        cin >> length >> inputSpeed;
+
+        for (int j=0;j<length;j++)
+        {
+            speed[j+markedUntil]=inputSpeed;
+        }
+        markedUntil+=length;
+    }
+
+    int maxOver=0;
+    for (int i=1;i<100;i++)
+    {
+        maxOver=max(speed[i]-limit[i],maxOver);
+    }
+
+    cout << maxOver;
+
+    cin.close();
+    cout.close();
     return 0;
 }
