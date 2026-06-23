@@ -7,26 +7,69 @@
 #include <cmath>
 using namespace std;
 
+bool isVowel(char c)
+{
+    return c=='a' || c=='e' || c=='i' || c=='o' || c=='u';
+}
+
 int main()
 {
-    long long n;
-    cin>>n;
-
-    vector<long long> costs;
-    for(long long i=1;i<=n;i++)
+    string pass;
+    while (cin >> pass && pass != "end")
     {
-        long long price;
-        cin>>price;
-        costs.push_back(price);
-    }
 
-    sort(costs.begin(),costs.end(),greater<long long>());
 
-    long long sum=0;
-    for (long long i=2;i<costs.size();i+=3)
-    {
-        sum+=costs[i];
+        bool isOk=true;
+        //1;
+        for(int j=0;j<pass.length();j++)
+        {
+            if(isVowel(pass[j]))
+            {
+                break;
+            }
+            if (j==pass.length()-1)
+            {
+                cout << '<' << pass << "> is not acceptable.\n";
+                isOk = false;
+                break;
+            }
+        }
+
+        if(!isOk) continue;
+
+        //2
+        if (pass.size()>=3)
+        {
+            for(int j=0;j<pass.length()-2;j++)
+            {
+                if ( (isVowel(pass[j]) && isVowel(pass[j+1]) && isVowel(pass[j+2])) || (!isVowel(pass[j]) && !isVowel(pass[j+1]) && !isVowel(pass[j+2])) )
+                {
+                    cout << '<' << pass << "> is not acceptable.\n";
+                    isOk = false;
+                    break;
+                }
+            }
+        }
+
+        if(!isOk) continue;
+
+        //3
+        if (pass.size()>=2)
+        {
+            for(int j=0;j<pass.length()-1;j++)
+            {
+                if (pass[j]!='e' && pass[j]!='o' && pass[j]==pass[j+1])
+                {
+                    cout << '<' << pass << "> is not acceptable.\n";
+                    isOk = false;
+                    break;
+                }
+            }
+        }
+
+        if(!isOk) continue;
+
+        cout << '<' << pass << "> is acceptable.\n";
     }
-    cout<<sum;
     return 0;
 }
