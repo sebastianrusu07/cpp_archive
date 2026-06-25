@@ -12,15 +12,8 @@ using namespace std;
 
 int main()
 {
-    int a,b;
-    cin>>a>>b;
-
-    if (b%2!=0)
-    {
-        cout << "impossible";
-    }else
-    {
-        cout << "possible";
-    }
+    int year;
+    cin>>year;
+    cout << (year==1984?"Literally 1984":"Not 1984... yet");
     return 0;
 }
