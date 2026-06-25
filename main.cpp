@@ -1,41 +1,26 @@
-#include <fstream>
+#include <iostream>
 #include <string>
 #include <iomanip>
 #include <unordered_map>
 #include <vector>
 #include <unordered_set>
 #include <cmath>
+#include <queue>
+#include <algorithm>
+#include <set>
 using namespace std;
-
-ifstream cin("blist.in");
-ofstream cout("blist.out");
-
-int bucketsNeeded[1005];
 
 int main()
 {
-    int n;
-    cin >> n;
+    int a,b;
+    cin>>a>>b;
 
-    for (int i=0;i<n;i++)
+    if (b%2!=0)
     {
-        int from,to,buckets;
-        cin >> from >> to >> buckets;
-
-        for (int j=from;j<=to;j++)
-        {
-            bucketsNeeded[j]+=buckets;
-        }
-    }
-
-    int most=0;
-    for (int i=0;i<=1000;i++)
+        cout << "impossible";
+    }else
     {
-        most=max(most,bucketsNeeded[i]);
+        cout << "possible";
     }
-
-    cout << most;
-    cin.close();
-    cout.close();
     return 0;
 }
