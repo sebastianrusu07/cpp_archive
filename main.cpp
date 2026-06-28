@@ -15,10 +15,9 @@ int main()
     int a,b;
     cin>>a>>b;
 
-    if (b%2!=0)
+    vector<string> goodWords;
+    for(int i=0;i<n;i++)
     {
-        cout << "impossible";
-    }else
     {
         cout << "possible";
     }
