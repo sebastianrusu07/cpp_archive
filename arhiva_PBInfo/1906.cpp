@@ -10,6 +10,8 @@
 #include <set>
 using namespace std;
 
+bitset<700005> appears;
+
 ifstream fin("memory007.in");
 ofstream fout("memory007.out");
 
@@ -22,7 +24,6 @@ int main()
     fin>>n>>m>>rangeBegin>>rangeEnd;
 
     int size=rangeEnd-rangeBegin;
-    vector<bool> appears(size+1,false);
 
     for (int i=0;i<n;i++)
     {
@@ -37,7 +38,7 @@ int main()
     {
         int nextIndex;
         fin>>nextIndex;
-        while (numbersPassed<nextIndex)
+        while (numbersPassed<nextIndex && it <= size)
         {
             if (appears[it])
             {
